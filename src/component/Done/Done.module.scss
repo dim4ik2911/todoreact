@@ -1,5 +1,19 @@
 .button {
-  height: 2rem;
-  width: 2rem;
-  margin: 0 1rem;
+  background-color: transparent;
+  outline: none;
+  border: 0.3rem solid red;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1rem;
+  color: red;
+  text-transform: uppercase;
+  padding: 0.2rem;
+  box-shadow: 0 0.3rem #999;
+  height: 2.5rem;
+  width: 2.5rem;
+  margin: auto;
+}
+
+.button:active {
+  box-shadow: 0 0.1rem #999;
+  transform: translateY(2px);
 }
