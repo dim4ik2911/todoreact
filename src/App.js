@@ -7,7 +7,7 @@ import icon from "../src/icon/changeColor.svg";
 function App() {
   const [tasks, handleTask] = useState([]);
   const [color, setColor] = useState(true);
-  console.log(color);
+  console.log(tasks);
 
   return (
     <div class={color ? "App black" : "App white"}>

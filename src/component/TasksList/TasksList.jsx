@@ -6,7 +6,11 @@ const TasksList = (props) => {
   return (
     <ul className={styles.TasksList}>
       {tasks.map((task) => {
-        return <li key={Math.random()}>{task}</li>;
+        return (
+          <li className={styles.TasksList__task} key={Math.random()}>
+            {task}
+          </li>
+        );
       })}
     </ul>
   );

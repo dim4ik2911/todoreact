@@ -6,11 +6,16 @@
   font-size: 1.5rem;
   justify-content: flex-start;
   align-items: flex-start;
-  list-style: none;
+
   color: $light-color;
-  width: 90%;
-  height: 40rem;
+  width: 80%;
+
   margin: 2rem auto;
+
+  &__task {
+    width: 100%;
+    overflow-wrap: break-word;
+  }
 }
 
 // .smallTask {

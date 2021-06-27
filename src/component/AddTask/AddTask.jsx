@@ -6,13 +6,11 @@ const AddTask = (props) => {
 
   const [writtenTask, setWrittenTask] = useState("");
 
-  // const addTask = (e) => {
-  //   handleTask([...tasks, e.target.value]);
-  // };
-
   const addTheTask = () => {
-    handleTask([...tasks, writtenTask]);
-    setWrittenTask("");
+    if (writtenTask.length) {
+      handleTask([...tasks, writtenTask]);
+      setWrittenTask("");
+    }
   };
 
   return (
