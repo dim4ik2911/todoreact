@@ -1,15 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./TasksList.module.scss";
 
 const TasksList = (props) => {
-  const { tasks } = props;
+  const { tasks, handleTask } = props;
+
   return (
     <ul className={styles.TasksList}>
       {tasks.map((task) => {
         return (
-          <li className={styles.TasksList__task} key={Math.random()}>
-            {task}
-          </li>
+          <div className={styles.TasksList__div}>
+            <li className={styles.TasksList__div_task} key={task.id}>
+              {task.task}
+            </li>
+            <button
+              className={styles.TasksList__div_delete}
+              onClick={() =>
+                handleTask(tasks.filter((todo) => todo.id !== task.id))
+              }
+            >
+              X
+            </button>
+          </div>
         );
       })}
     </ul>

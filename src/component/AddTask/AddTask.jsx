@@ -3,25 +3,26 @@ import styles from "./AddTask.module.scss";
 
 const AddTask = (props) => {
   const { tasks, handleTask } = props;
-
-  const [writtenTask, setWrittenTask] = useState("");
+  const [ourId, setOurId] = useState(1);
+  const [writtenTask, setWrittenTask] = useState({});
 
   const addTheTask = () => {
-    if (writtenTask.length) {
+    if (writtenTask.task) {
       handleTask([...tasks, writtenTask]);
-      setWrittenTask("");
+      setWrittenTask({ task: "", id: ourId });
+      setOurId(ourId + 1);
     }
   };
 
   return (
     <div className={styles.addingTheTask}>
       <textarea
-        minLength="5"
-        maxLength="70"
         placeholder="Add your task..."
         className={styles.textarea}
-        value={writtenTask}
-        onChange={(e) => setWrittenTask(e.target.value)}
+        value={writtenTask.task}
+        onChange={(e) => {
+          setWrittenTask({ task: e.target.value, id: ourId });
+        }}
       ></textarea>
       <button
         onClick={() => addTheTask()}

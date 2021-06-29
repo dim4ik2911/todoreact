@@ -1,32 +1,20 @@
-// $light-color: #ff9c0b;
-// $black-color: #000000;
-// $grey-color: #545457;
-
-// * {
-//   box-sizing: border-box;
-//   padding: 0;
-//   margin: 0;
-//   font-family: "Staatliches", cursive;
-// }
-
-// html {
-//   font-size: 62.5%;
-// }
 @import "../src/styles/styles.scss";
 .black {
   background-color: $black-color;
 }
 
 .white {
-  background-color: #fff;
+  background-color: rgb(255, 218, 200);
+}
+.screen {
+  min-height: 100vh;
 }
 
 .App {
-  border: 0.3rem solid $light-color;
-  // background-color: #ffffff;
-  // background-color: $black-color;
-
+  width: 100%;
   min-height: 100vh;
+  border: 0.3rem solid $light-color;
+
   display: flex;
   flex-direction: column;
   position: relative;
@@ -40,12 +28,42 @@
     position: absolute;
     left: 1rem;
     top: 1rem;
-    background-color: inherit;
+    background-color: $grey-color;
     border: none;
+    border-radius: 50%;
+    box-shadow: 0 0.15rem $grey-color;
+
+    &:active {
+      box-shadow: 0 0.1rem $grey-color;
+      transform: translateY(1px);
+    }
 
     &_icon {
-      height: 2rem;
-      width: 2rem;
+      height: 1.8rem;
+      width: 1.8rem;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
+  }
+}
+@media screen and (min-width: 768px) {
+  .screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .App {
+    width: 35rem;
+
+    min-height: 50rem;
+    margin: 3rem auto;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .App {
+    width: 45rem;
+    min-height: 65rem;
   }
 }

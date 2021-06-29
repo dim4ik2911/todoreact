@@ -10,16 +10,21 @@ html {
 }
 
 .black {
-  background-color: #000000;
+  background-color: #1a0d00;
 }
 
 .white {
-  background-color: #fff;
+  background-color: #ffdac8;
+}
+
+.screen {
+  min-height: 100vh;
 }
 
 .App {
-  border: 0.3rem solid #ff9c0b;
+  width: 100%;
   min-height: 100vh;
+  border: 0.3rem solid #ff9c0b;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -33,10 +38,39 @@ html {
   position: absolute;
   left: 1rem;
   top: 1rem;
-  background-color: inherit;
+  background-color: #d5d5d8;
   border: none;
+  border-radius: 50%;
+  box-shadow: 0 0.15rem #d5d5d8;
+}
+.App__button:active {
+  box-shadow: 0 0.1rem #d5d5d8;
+  transform: translateY(1px);
 }
 .App__button_icon {
-  height: 2rem;
-  width: 2rem;
+  height: 1.8rem;
+  width: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .App {
+    width: 35rem;
+    min-height: 50rem;
+    margin: 3rem auto;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .App {
+    width: 45rem;
+    min-height: 65rem;
+  }
 }

@@ -3,43 +3,46 @@
 .TasksList {
   display: flex;
   flex-direction: column;
-  font-size: 1.5rem;
+
   justify-content: flex-start;
   align-items: flex-start;
 
   color: $light-color;
-  width: 80%;
+  width: 82%;
 
   margin: 2rem auto;
 
-  &__task {
+  &__div {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
-    overflow-wrap: break-word;
+    margin-bottom: 1rem;
+
+    &_task {
+      width: 80%;
+      overflow-wrap: break-word;
+      font-size: 1.5rem;
+    }
+
+    &_delete {
+      font-size: 1.3rem;
+      border-radius: 50%;
+      border: 0.2rem solid $light-color;
+      color: $light-color;
+      background-color: inherit;
+      outline: none;
+      height: 1.7rem;
+      width: 1.7rem;
+      box-shadow: 0 0.15rem $grey-color;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:active {
+        box-shadow: 0 0.1rem $grey-color;
+        transform: translateY(1px);
+      }
+    }
   }
 }
-
-// .smallTask {
-//   padding: 0.2rem;
-//   width: 75%;
-//   height: 40%;
-//   margin-left: 1rem;
-// }
-// .buttonX {
-//   background-color: transparent;
-//   outline: none;
-//   border: 0.3rem solid red;
-//   font-family: "Noto Sans", sans-serif;
-//   font-size: 1rem;
-//   color: red;
-//   text-transform: uppercase;
-//   padding: 0.2rem;
-//   box-shadow: 0 0.3rem #999;
-//   height: 2.5rem;
-//   width: 2.5rem;
-//   margin: auto;
-// }
-
-// .buttonX:active {
-//   box-shadow: 0 0.1rem #999;
-//   transform: translateY(2px);
-// }
